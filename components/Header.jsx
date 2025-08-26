@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, PlusCircleIcon } from '@heroicons/react/24/outline'
+import { HomeIcon } from '@heroicons/react/24/solid'
+
 
 export default function Header() {
   return (
-      <div className="flex items-center justify-between max-w-6xl">
+      <div className="flex items-center justify-between max-w-6xl mx-4 xl:mx-auto">
           {/* left section */}
               <div className="h-24 w-24 relative hidden lg:inline-grid cursor-pointer">
                   <Image
@@ -30,7 +32,13 @@ export default function Header() {
               </div>
               <input type="text" placeholder='search' className='bg-gray-50 pl-10 border-gray-500 text-sm focus:ring-black focus:border-black rounded-md' />
           </div>
-        <div>Right Section</div>
+
+          {/* right section */}
+          <div className='flex space-x-4 items-center'>
+              <HomeIcon className='h-6 hover:scale-125 transition-transform duration-200 ease-out cursor-pointer hidden md:inline-flex'/>
+              <PlusCircleIcon className='h-6 hover:scale-125 transition-transform duration-200 ease-out cursor-pointer' />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFIO8i8i3D60705OwMtBDweKC3aTIkThlqQw&s" alt="user-image" className='h-10 rounded-full cursor-pointer' />
+        </div>
       </div>
   )
 }
