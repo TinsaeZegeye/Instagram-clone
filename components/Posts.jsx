@@ -15,7 +15,7 @@ export default function Posts() {
             username: 'Estifanos Zegeye', 
             userImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFIO8i8i3D60705OwMtBDweKC3aTIkThlqQw&s', 
             img: 'https://images.unsplash.com/photo-1755311903890-c0aed5dc2825?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8', 
-            caption: 'Woww.... beautiful image', 
+            caption: 'Wow..... beautiful image', 
         }
     ]
   return (
