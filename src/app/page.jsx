@@ -1,6 +1,9 @@
+'use client'
+
 import Image from "next/image";
 import Feed from "../../components/Feed";
 import Header from "../../components/Header";
+import UploadModal from "../../components/UploadModal"
 
 export default function Home() {
   return (
@@ -11,6 +14,8 @@ export default function Home() {
       {/* feed */}
       <Feed/>
 
+      {/* modal */}
+      <UploadModal/>
     </div>
   )
 }

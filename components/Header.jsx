@@ -5,10 +5,16 @@ import React from 'react'
 import { MagnifyingGlassIcon, PlusCircleIcon } from '@heroicons/react/24/outline'
 import { HomeIcon } from '@heroicons/react/24/solid'
 import { useSession, signIn, signOut } from 'next-auth/react'
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleModal } from '../store/modalSlice';
 
 
 export default function Header() {
+
     const { data: session } = useSession();
+    const isOpen = useSelector((state) => state.modal.isOpen); 
+    const dispatch = useDispatch();
+
     return (
       <div className='shadow-sm border-b-gray-400 sticky top-0 bg-white z-30'>
             <div className="flex items-center justify-between max-w-6xl mx-4 xl:mx-auto">
@@ -44,7 +50,7 @@ export default function Header() {
                     
                     {session ? (
                         <>
-                            <PlusCircleIcon className='h-6 hover:scale-125 transition-transform duration-200 ease-out cursor-pointer' />
+                            <PlusCircleIcon onClick={()=> dispatch(toggleModal())} className='h-6 hover:scale-125 transition-transform duration-200 ease-out cursor-pointer' />
                             <img onClick={signOut} src={session.user.image} alt="user-image" className='h-10 rounded-full cursor-pointer' />
                         </>
                     ) : (
